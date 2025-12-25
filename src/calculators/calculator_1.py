@@ -12,6 +12,7 @@ class Calculator1:
         response = self.__format_response(calc_result)
 
         return response
+    
 
     def __validate_body(self, body: Dict) -> float:
         if not body or 'number' not in body:
