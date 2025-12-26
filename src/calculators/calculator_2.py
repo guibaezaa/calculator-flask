@@ -1,5 +1,9 @@
-from typing import Dict, List
-from flask import Request as FlaskRequest
+from __future__ import annotations
+
+from typing import Dict, List, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from flask import Request as FlaskRequest
 from src.drivers.interfaces.driver_handler_inteface import DriverHandlerInterface
 
 class Calculator2:
