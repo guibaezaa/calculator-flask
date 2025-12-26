@@ -1,11 +1,14 @@
 from typing import List
-import math
+import numpy
+from .interfaces.driver_handler_inteface import DriverHandlerInterface
 
 
-class NumpyHandler:
+class NumpyHandler(DriverHandlerInterface):
+	def __init__ (self) -> None:
+		self.__np = numpy
+
 	def standard_derivation(self, numbers: List[float]) -> float:
-		if not numbers:
-			raise ValueError("'numbers' must be a non-empty list")
-		mean = sum(numbers) / len(numbers)
-		variance = sum((x - mean) ** 2 for x in numbers) / len(numbers)
-		return math.sqrt(variance)
+		return float(self.__np.std(numbers))
+
+	def variance(self, numbers: List[float]) -> float:
+		return float(self.__np.var(numbers))
