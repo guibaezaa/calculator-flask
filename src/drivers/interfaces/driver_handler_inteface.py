@@ -10,3 +10,7 @@ class DriverHandlerInterface(ABC):
     @abstractmethod
     def variance(self, numbers: List[float]) -> float:
         raise NotImplementedError()
+    
+    @abstractmethod
+    def mean(self, numbers: List[float]) -> float:
+        raise NotImplementedError()
